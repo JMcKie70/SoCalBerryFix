@@ -1,0 +1,60 @@
+body{
+	background-color: rgb(253,253,234);
+}
+#wrapper{
+	width:990px;
+	height: 1000px;
+	padding-left:10px;
+}
+#header{
+	width: 1000px;
+	height: 150px;
+}
+h1{
+	width:600px;
+	margin-left:15px;
+}
+h4{
+	width:840px;
+	margin-left:20px;
+}
+#top-text{
+	width:930px;
+	margin-left:20px;
+}
+span{
+	text-decoration: underline;
+	font-weight: bold;
+}
+#content{
+	width: 1000px;
+	height: 600px;
+}
+.berries{
+	width: 300px;
+	height: 300px;
+	margin-left:20px;
+	display: inline-block;
+}
+h3{
+	width: 150px;
+	height: 30px;
+	margin-left: 70px;
+}
+img{
+	width: 250px;
+	height: 200px;
+}
+#footer{
+	width: 1000px;
+	height: 250px;
+}
+h2{
+	width:250px;
+	margin-left:20px;
+}
+.links{
+	margin-left:20px;
+}
+
+
