@@ -1,32 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>SoCal Berry Fix</title>
-	<link rel="stylesheet" type="text/css" href="/stylesheets/home">
-</head>
-<body>
-	<div id="wrapper">
-		<div id="header">
-			<h1>Welcome to SoCal Berry Fix!</h1>
-			<h4>Your source for berry growing information specific to Southern California.</h4>
-			<p id="top-text">Growing from a passion/obsession with berries yielding sore backs, sore knees, thornpricks, and... beautiful, delicious, healthy fruit, and greater peace of mind right here in coastal Los Angeles.  <span>Please click on your fruit name of choice</span> or scroll to the bottom to learn more, more, more...</p>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SoCal Berry Fix</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/home">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("form").submit(function(){
+		        	return false;
+				});
+				$('button').click(function(){
+					var zipCode = $('input').val();
+					var hours = $('#hours').val();
+					var apiKey = "4a413033488e238bc0677c8138ffdc08";
+					$.get("http://api.openweathermap.org/data/2.5/forecast?zip="+zipCode+"&appid="+apiKey, function(response){
+							var tempK = response.list[hours].main.temp;
+							var tempC = tempK - 273;
+							var tempF = Math.floor((tempC * 9/5) + 32);
+							var humid = response.list[hours].main.humidity;
+							var windms = response.list[hours].wind.speed;
+							var windmph = Math.floor(2.23694 * windms);
+							var descr = response.list[hours].weather[0].description;
+							$('#results').html("<h4>"+tempF+" degrees F with "+humid+"% humidity</h4><h4>"+windmph+" mph winds with "+descr+"</h4>");
+					}, "json");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="row">
+				<div class="column twelve-s seven-m eight-l">
+					<div class="header-footer">
+						<h1>SoCal Berry Fix</h1>
+						<p id="top-copy">Your source for berry growing information in Southern California.<br>From a growing passion for growing berries right here in coastal Los Angeles!<br><span>Click on the berry name</span> of choice and/or scroll to the bottom to learn more, more, more...</p>
+					</div>
+				</div>
+				<div class="column twelve-s five-m four-l">
+					<div class="header-footer">
+						<p id="ad">(Your Ad Here)</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column twelve-s six-m four-l">
+					<div class="photo-links">
+						<h3 class="berry-links"><a href="/blueberries">Blueberries</a></h3>
+						<img src="/images/blue">
+					</div>
+				</div>
+				<div class="column twelve-s six-m four-l">
+					<div class="photo-links">
+						<h3 class="berry-links"><a href="/strawberries">Strawberries</a></h3>
+						<img src="/images/straw">
+					</div>
+				</div>
+				<div class="column twelve-s six-m four-l">
+					<div class="photo-links">
+						<h3 class="berry-links"><a href="/grapeberries">Grapeberries</a></h3>
+						<img src="/images/grape">
+					</div>
+				</div>
+				<div class="column twelve-s six-m four-l">
+					<div class="photo-links">
+						<h3 class="berry-links"><a href="/raspberries">Raspberries</a></h3>
+						<img src="/images/rasp">
+					</div>
+				</div>
+				<div class="column twelve-s six-m four-l">
+					<div class="photo-links">
+						<h3 class="berry-links"><a href="/boysenberries">Boysenberries</a></h3>
+						<img src="/images/boysen">
+					</div>
+				</div>
+				<div class="column twelve-s six-m four-l">
+					<div class="photo-links">
+						<h3 class="berry-links"><a href="/blackberries">Blackberries</a></h3>
+						<img src="/images/black">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<h2>Additional Resources</h2>
+				<div class="column twelve-s three-m four-l">
+					<div class="header-footer">
+						<h4 class="teaser">Find the Plants that will Thrive!</h4>
+						<p class="resource-links"><a href="http://planthardiness.ars.usda.gov/PHZMWeb/#">Plant Hardiness Zones by ZIP Code</a></p>
+					</div>
+				</div>
+				<div class="column twelve-s three-m four-l">
+					<div class="header-footer">
+						<h4 class="teaser">Find the Varieties that will Fruit!</h4>
+						<p class="resource-links"><a href="http://fruitsandnuts.ucdavis.edu/Weather_Services/chilling_accumulation_models/Chill_Calculators/?type=chill">Chill Hours by California County</a></p>
+			      	</div>
+	      		</div>
+	      		<div class="column twelve-s six-m four-l">
+	      			<div class="header-footer">
+						<h4 class="teaser">Find the Five Day Weather Report!</h4>
+			        	<form>
+			          		<input type="text" placeholder="Zip Code" />
+							<select id="hours">
+								<option value="0">Today</option>
+								<option value="8">Tomorrow</option>
+								<option value="16">Two Days Out</option>
+								<option value="24">Three Days Out</option>
+								<option value="32">Four Days Out</option>
+							</select>
+			          		<button type="button">Weather</button>
+			        	</form>
+			      		<div id="results">
+			      		</div>
+					</div>
+	      		</div>
+			</div>
+			<div class="row">
+				<div class="column twelve-s twelve-m twelve-l">
+					<p id="creator">Created by J. McKie | All Rights Reserved</p>
+				</div>
+			</div>
 		</div>
-		<div id="content">
-			<div class="berries"><h3><a href="/blueberries">Blueberries</a></h3><img src="/images/blue"></div>
-			<div class="berries"><h3><a href="/strawberries">Strawberries</a></h3><img src="/images/straw"></div>
-			<div class="berries"><h3><a href="/grapeberries">Grapeberries</a></h3><img src="/images/grape"></div>
-			<div class="berries"><h3><a href="/raspberries">Raspberries</a></h3><img src="/images/rasp"></div>
-			<div class="berries"><h3><a href="/boysenberries">Boysenberries</a></h3><img src="/images/boysen"></div>
-			<div class="berries"><h3><a href="/blackberries">Blackberries</a></h3><img src="/images/black"></div>
-		</div>
-		<div id="footer">
-			<h2>Did You Know?</h2>
-			<h4>Chill hours help you select plants that will actually bear fruit at your location instead of just being ornamentals!</h4>
-			<p class="links"><a href="http://fruitsandnuts.ucdavis.edu/Weather_Services/chilling_accumulation_models/Chill_Calculators/?type=chill">Chill Hours by California County Here</a></p>
-			<h4>USDA plant hardiness zones help you find plants that will thrive at your location instead of struggling and withering away!</h4>
-			<p class="links"><a href="http://planthardiness.ars.usda.gov/PHZMWeb/#">Plant Hardiness Zones by California ZIP Code Here</a></p>
-		</div>
-	</div>
-</body>
+	</body>
 </html>

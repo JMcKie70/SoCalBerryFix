@@ -1,67 +1,118 @@
+* {
+	box-sizing: border-box;
+}
+
+/*padding/border in elements total width/height*/
+
 body{
-	background-color: rgb(253,253,234);
+	font-size: 1em;
 }
-#wrapper{
-	width:990px;
-	height: 1000px;
-	padding-left:10px;
+
+#wrapper {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
-#header{
-	width: 990px;
-	height: 150px;
+
+.row {
+	padding-left: 1em;
+	clear: both;
 }
-.nav-links{
-	margin-right:80px;
-	margin-left:15px;
+
+/*set up row not to float (clear)*/
+
+.column {
+	float: left;
+	padding-right: 1em;
 }
+
+a:hover { 
+    background-color: yellow;
+}
+
 h1{
-	width:600px;
-	margin-left:15px;
+	font-size: 3.4em;
+	padding-top: 20px;
 }
+
 #top-text{
-	width:990px;
-	margin-left:15px;
+	font-size: 1em;
 }
-#content{
-	width: 990px;
-	height: 650px;
+
+#photo-caption{
+	padding-top: 1.6em;
 }
+
 img{
-	width:450px;
-	height:300px;
-	margin-left:15px;
+	width:21em;
+	height:14em;
 }
-#key-facts{
-	width:450px;
-	height: 300px;
-	margin-left:30px;
-	display:inline-block;
-	vertical-align: top;
+
+h6{
+	padding-left: 11em;
 }
-#key-facts h2{
-	margin-left:20px;
+
+#facts{
+	padding-left: 1.1em;
 }
-#opinions{
-	width: 990px;
-	height: 300px;
+
+#fact-heading{
+	padding-left: 1.4em;
 }
-#opinions h2{
-	margin-left: 15px;
+
+#ad{
+	text-align: center;
 }
-#opinions h4{
-	margin-left: 15px;
+
+#creator{
+	text-align: center;
+	padding-top: 20px;
 }
-#opinions p{
-	margin-left: 15px;
+
+/*Resize em's for small screens*/
+
+@media (max-width: 500px) {
+  body { font-size: 0.4em; }
 }
-#footer{
-	width: 990px;
-	height: 200px;
+
+/*Resize em's for medium screens*/
+
+@media (max-width: 1000px) {
+  body { font-size: .7em; }
 }
-#footer h3{
-	width:250px;
-	margin-left:15px;
+
+/*small-size screens*/
+
+@media only screen and (max-width: 480px) {
+	.twelve-s { width: 100%; }
 }
-#footer p{
-	margin-left:15px;
+
+/* small-size screens < 480px */
+
+@media only screen and (max-width: 480px) {
+	.twelve-s { width: 100%; }
+	.six-s { width: 50%; }
+}
+
+/* medium-size screens > 480px & < 1024px */
+
+@media only screen and (min-width: 481px) {
+	.twelve-m { width: 100%; }
+	.eight-m { width: 66.66666666%; }
+	.seven-m { width: 58.33333333%; }
+	.six-m { width: 50%; }
+	.five-m { width: 41.66666666%; }
+	.four-m { width: 33.33333333%; }
+}
+
+/* large-size screens > 1024px */
+
+@media only screen and (min-width: 1024px) {
+	.twelve-l { width: 100%; }
+	.eight-l { width: 66.66666666%; }
+	.seven-l { width: 58.33333333%; }
+	.six-l { width: 50%; }
+	.five-l { width: 41.66666666%; }
+	.four-l { width: 33.33333333%; }
+	.two-l { width: 16.66666666%; }
 }

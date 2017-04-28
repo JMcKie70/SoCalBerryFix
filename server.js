@@ -15,6 +15,13 @@ var server = http.createServer(function (request, response){
              response.end();
         });
     }
+    else if(request.url === '/images/background'){
+        fs.readFile('./images/background.jpg', function(errors, contents){
+            response.writeHead(200, {'Content-type': 'image/jpg'});
+            response.write(contents);
+            response.end();
+        });
+    }
     else if(request.url === '/images/blue'){
         fs.readFile('./images/blue.jpeg', function(errors, contents){
             response.writeHead(200, {'Content-type': 'image/jpg'});

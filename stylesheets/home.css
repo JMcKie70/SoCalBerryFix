@@ -1,60 +1,169 @@
-body{
-	background-color: rgb(253,253,234);
-}
-#wrapper{
-	width:990px;
-	height: 1000px;
-	padding-left:10px;
-}
-#header{
-	width: 1000px;
-	height: 150px;
-}
-h1{
-	width:600px;
-	margin-left:15px;
-}
-h4{
-	width:840px;
-	margin-left:20px;
-}
-#top-text{
-	width:930px;
-	margin-left:20px;
-}
-span{
-	text-decoration: underline;
-	font-weight: bold;
-}
-#content{
-	width: 1000px;
-	height: 600px;
-}
-.berries{
-	width: 300px;
-	height: 300px;
-	margin-left:20px;
-	display: inline-block;
-}
-h3{
-	width: 150px;
-	height: 30px;
-	margin-left: 70px;
-}
-img{
-	width: 250px;
-	height: 200px;
-}
-#footer{
-	width: 1000px;
-	height: 250px;
-}
-h2{
-	width:250px;
-	margin-left:20px;
-}
-.links{
-	margin-left:20px;
+* {
+	box-sizing: border-box;
 }
 
+/*padding/border in elements total width/height*/
+
+html { 
+  background: url("/images/background") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+	font-size: 1em;
+}
+
+#wrapper {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row {
+	padding-left: 1em;
+	clear: both;
+}
+
+/*set up row not to float (clear)*/
+
+.column {
+	float: left;
+	padding-right: 1em;
+}
+
+.header-footer{
+	padding-left: 1em;
+}
+
+h1{
+	font-size: 3em;
+	color: yellow;
+}
+
+#top-copy{
+	color: white;
+	font-size: 1em;
+}
+
+span{
+	text-decoration: underline;
+}
+
+#ad{
+	text-align: center;
+	font-size: 1em;
+}
+
+.photo-links {
+	padding: 1.3em;
+}
+
+.berry-links{
+	padding-left: 3.5em;
+	font-size: 1.5em;
+}
+
+a:hover { 
+    background-color: yellow;
+}
+
+img{
+	width:19em;
+	height:12.67em;
+}
+
+
+h2{
+	text-decoration: underline;
+	padding-left: 1em;
+	padding-top: 20px;
+	color:yellow;
+	font-size: 1.8em;
+}
+
+.teaser{
+	color:white;
+	font-size: 1.1em;
+	padding-left: 1em;
+}
+
+.resource-links{
+	font-size: 1.1em;
+	padding-left: 1em;
+}
+
+form{
+	padding-left: 1em;
+}
+
+input{
+	width:25%;
+	text-align:center;
+	border-radius: 4px;
+}
+
+#hours{
+	width:45%;
+}
+
+button{
+	width:25%;
+	border-radius: 4px;
+	font-size: 0.8em;
+}
+
+button:hover { 
+    background-color: yellow;
+}
+
+h4{
+	padding-left: 1.2em;
+}
+
+#creator{
+	text-align: center;
+	padding-top: 20px;
+	font-size: 1em;
+}
+
+/*Resize em's for small screens*/
+
+@media (max-width: 500px) {
+  body { font-size: 0.4em; }
+}
+
+/*Resize em's for medium screens*/
+
+@media (max-width: 1000px) {
+  body { font-size: .7em; }
+}
+
+/*small-size screens*/
+
+@media only screen and (max-width: 480px) {
+	.twelve-s { width: 100%; }
+}
+
+/*medium-size screens*/
+
+@media only screen and (min-width: 481px) {
+	.twelve-m { width: 100%; }
+	.eight-m { width: 66.66666666%; }
+	.seven-m { width: 58.33333333%; }
+	.six-m { width: 50%; }
+	.five-m { width: 41.66666666%; }
+	.four-m { width: 33.33333333%; }
+}
+
+/*large-size screens*/
+
+@media only screen and (min-width: 1024px) {
+	.twelve-l { width: 100%; }
+	.eight-l { width: 66.66666666%; }
+	.six-l { width: 50%; }
+	.four-l { width: 33.33333333%; }
+}
 
