@@ -12,10 +12,6 @@ html {
   background-size: cover;
 }
 
-body{
-	font-size: 1em;
-}
-
 #wrapper {
 	width: 90%;
 	margin-left: auto;
@@ -62,7 +58,7 @@ span{
 }
 
 .berry-links{
-	padding-left: 3.5em;
+	padding-left: 2.9em;
 	font-size: 1.5em;
 }
 
@@ -71,48 +67,53 @@ a:hover {
 }
 
 img{
-	width:19em;
-	height:12.67em;
+	width:18em;
+	height:12em;
 }
 
 
 h2{
 	text-decoration: underline;
-	padding-left: 1em;
+	padding-left: .8em;
 	padding-top: 20px;
 	color:yellow;
-	font-size: 1.8em;
+	font-size: 1.7em;
 }
 
 .teaser{
 	color:white;
 	font-size: 1.1em;
-	padding-left: 1em;
+	padding-left: .5em;
 }
 
 .resource-links{
 	font-size: 1.1em;
-	padding-left: 1em;
+	padding-left: .5em;
 }
 
 form{
-	padding-left: 1em;
+	padding-left: .5em;
 }
 
 input{
 	width:25%;
 	text-align:center;
 	border-radius: 4px;
+	border: 1px black solid;
 }
 
 #hours{
 	width:45%;
+	background-color: lightgray;
+	border: 1px black solid;
 }
 
 button{
 	width:25%;
 	border-radius: 4px;
 	font-size: 0.8em;
+	background-color: lightgray;
+	border: 1px black solid;
 }
 
 button:hover { 
@@ -129,41 +130,32 @@ h4{
 	font-size: 1em;
 }
 
-/*Resize em's for small screens*/
-
-@media (max-width: 500px) {
-  body { font-size: 0.4em; }
-}
-
-/*Resize em's for medium screens*/
-
-@media (max-width: 1000px) {
-  body { font-size: .7em; }
-}
-
 /*small-size screens*/
-
-@media only screen and (max-width: 480px) {
+/* platform uses 480px*/
+@media only screen and (max-width: 574px) {
 	.twelve-s { width: 100%; }
+	body { font-size: 0.64em; }
 }
 
 /*medium-size screens*/
-
-@media only screen and (min-width: 481px) {
+/* platform uses 481px*/
+@media only screen and (min-width: 575px) {
 	.twelve-m { width: 100%; }
 	.eight-m { width: 66.66666666%; }
 	.seven-m { width: 58.33333333%; }
 	.six-m { width: 50%; }
 	.five-m { width: 41.66666666%; }
 	.four-m { width: 33.33333333%; }
+	body { font-size: .8em; }
 }
 
 /*large-size screens*/
-
-@media only screen and (min-width: 1024px) {
+/* platform uses 1024px*/
+@media only screen and (min-width: 1100px) {
 	.twelve-l { width: 100%; }
 	.eight-l { width: 66.66666666%; }
 	.six-l { width: 50%; }
 	.four-l { width: 33.33333333%; }
+	body { font-size: 1em; }
 }
 

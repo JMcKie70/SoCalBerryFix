@@ -4,14 +4,11 @@
 
 /*padding/border in elements total width/height*/
 
-body{
-	font-size: 1em;
-}
-
 #wrapper {
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 2em;
 }
 
 .row {
@@ -26,17 +23,22 @@ body{
 	padding-right: 1em;
 }
 
+.nav-links{
+	padding-left: .2em;
+}
+
 a:hover { 
     background-color: yellow;
 }
 
 h1{
-	font-size: 3.4em;
+	font-size: 3.1em;
 	padding-top: 20px;
 }
 
 #top-text{
 	font-size: 1em;
+	padding-left: .2em;
 }
 
 #photo-caption{
@@ -46,18 +48,19 @@ h1{
 img{
 	width:21em;
 	height:14em;
+	padding-left: .2em;
 }
 
 h6{
-	padding-left: 11em;
+	padding-left: 10em;
 }
 
 #facts{
-	padding-left: 1.1em;
+	padding-left: 1.2em;
 }
 
 #fact-heading{
-	padding-left: 1.4em;
+	padding-left: 3.8em;
 }
 
 #ad{
@@ -66,53 +69,40 @@ h6{
 
 #creator{
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 2em;
+	padding-bottom: 1em;
 }
 
-/*Resize em's for small screens*/
+/* small-size screens */
 
-@media (max-width: 500px) {
-  body { font-size: 0.4em; }
-}
-
-/*Resize em's for medium screens*/
-
-@media (max-width: 1000px) {
-  body { font-size: .7em; }
-}
-
-/*small-size screens*/
-
-@media only screen and (max-width: 480px) {
-	.twelve-s { width: 100%; }
-}
-
-/* small-size screens < 480px */
-
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 574px) {
 	.twelve-s { width: 100%; }
 	.six-s { width: 50%; }
+	body { font-size: 0.64em; }
 }
 
-/* medium-size screens > 480px & < 1024px */
+/* medium-size screens */
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 575px) {
 	.twelve-m { width: 100%; }
 	.eight-m { width: 66.66666666%; }
 	.seven-m { width: 58.33333333%; }
 	.six-m { width: 50%; }
 	.five-m { width: 41.66666666%; }
 	.four-m { width: 33.33333333%; }
+	body { font-size: .8em; }
 }
 
-/* large-size screens > 1024px */
+/* large-size screens */
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1100px) {
 	.twelve-l { width: 100%; }
 	.eight-l { width: 66.66666666%; }
 	.seven-l { width: 58.33333333%; }
 	.six-l { width: 50%; }
 	.five-l { width: 41.66666666%; }
 	.four-l { width: 33.33333333%; }
+	.three-l { width: 25%; }
 	.two-l { width: 16.66666666%; }
+	body { font-size: 1em; }
 }

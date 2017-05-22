@@ -8,6 +8,13 @@ var server = http.createServer(function (request, response){
             response.end();                          
         });
     }
+    else if(request.url === '/stylesheets/normalize'){
+        fs.readFile('./stylesheets/normalize.css', 'utf8', function(errors, contents){
+             response.writeHead(200, {'Content-type': 'text/css'});
+             response.write(contents);
+             response.end();
+        });
+    }
     else if(request.url === '/stylesheets/home'){
         fs.readFile('./stylesheets/home.css', 'utf8', function(errors, contents){
              response.writeHead(200, {'Content-type': 'text/css'});
